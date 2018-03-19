@@ -16,6 +16,8 @@ check(current.code)
 #examples
 
 student <- new("Rasch", name = "Jason", a = c(37,43,55,22,34), y = c(0,1,1,0,1))
+
+student <- new("Rasch", name = "Jason", a = c(37,43,55,22,34,1000), y = c(0,1,1,0,1)) #test to see if validity function works by putting a and y at different lengths
 theta <- c(48)
 
 #raschModel_Probability functionality
