@@ -13,7 +13,7 @@
 #' 
 #' raschObj <- new(name = "Jason", a = c(1,3,4,3,2), y = c(3,4,3,5,7))
 #' theta <- c(5)
-#' raschModel_Probability(raschObj = raschObj, theta = theta)
+#' raschModel_Likelihood(raschObj = raschObj, theta = theta)
 #' 
 #' 
 #' @seealso \code{\link{Rasch}}
