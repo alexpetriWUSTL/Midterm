@@ -18,7 +18,7 @@ student <- new("Rasch", name = "Jason", a = c(37,43,55,22,34,1000), y = c(0,1,1,
 
 student <- new("Rasch", name = "Jason", a = c(37,43,55,22,34), y = c(0,1,1,0,1)) #actual student object of class "Rasch"
 
-theta <- c(48)
+theta <- c(49)
 
 #raschModel_Probability functionality
 prob <- raschModel_Probability(raschObj = student, theta = theta)
