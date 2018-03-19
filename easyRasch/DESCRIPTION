@@ -1,0 +1,20 @@
+Package: easyRasch
+Title: Making Rasch Models easy with Probability, Likelihood, and EAP
+Version: 0.1
+Author: Alex Petri
+Maintainer: Alex Petri <alexpetri@wustl.edu>
+Description: This package contains functions to calculate the Rasch Probability, Likelihood, Prior, and EAP values
+Depends:
+    R (>= 3.0.0),
+    methods
+License: CC0
+Suggests:
+    devtools
+Collate:
+    'Rasch.R'
+    'raschModel_Probability.R'
+    'raschModel_Likelihood.R'
+    'raschModel_Prior.R'
+    'raschModel_EAP.R'
+    'raschModel_Print.R'
+RoxygenNote: 6.0.1
