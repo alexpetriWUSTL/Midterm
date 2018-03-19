@@ -28,17 +28,17 @@ setGeneric(name="raschModel_Probability",
 #' @export
 setMethod(f="raschModel_Probability",
           definition = function(raschObj, theta){
-            P <- exp(theta - raschObj@a)/(1 + exp(theta - raschObj@a))
-            y <- raschObj@y
-            PnQ <- vector(mode = "numeric", length = length(P))
-            PQ <- matrix(c(P,y,PnQ), ncol = 3)
-            for(i in seq_along(y)){
+            P <- exp(theta - raschObj@a)/(1 + exp(theta - raschObj@a)) #to calculate all probabilities for a vector
+            y <- raschObj@y 
+            PnQ <- vector(mode = "numeric", length = length(P)) #create an empty vector
+            PQ <- matrix(c(P,y,PnQ), ncol = 3) #populate a matrix with P, Y and empty vector PnQ
+            for(i in seq_along(y)){ #unfortunately use for loop because apply was having issues
               if(PQ[i,2] == 0){
-                PQ[i,3] <- 1 - PQ[i,1] 
+                PQ[i,3] <- 1 - PQ[i,1] #populate the third column with Q values when Y = 0
               } else{
-                PQ[i,3] <- PQ[i,1]
+                PQ[i,3] <- PQ[i,1] #populate third column with P's if Y is 1
               }
             }
-            return(list(PQ[,1], PQ[,3]))
+            return(list(PQ[,1], PQ[,3])) #return the vectors of P and P/Q depending on Y
           }
           )

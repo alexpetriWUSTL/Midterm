@@ -24,6 +24,6 @@ setGeneric(name="raschModel_Prior",
 #' @export
 setMethod(f="raschModel_Prior",
           definition = function(theta){
-            return(dnorm(theta, mean = 0, sd = 3))
+            return(dnorm(theta, mean = 0, sd = 3)) #use dnorm to set up height for mean 0 and sd 3 
           }
 )

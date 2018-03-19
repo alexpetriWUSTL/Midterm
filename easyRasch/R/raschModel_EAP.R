@@ -28,17 +28,17 @@ setGeneric(name="raschModel_EAP",
 
 #' @export
 setMethod(f="raschModel_EAP",
-          definition = function(raschObj, theta, upper = 6, lower = -6){
-              L <- raschModel_Likelihood(raschObjJason, the)
-              pi <- raschModel_Prior(theta)
-              numerator <- function(theta){
+          definition = function(raschObj, theta, upper = 6, lower = -6){ #default upper and lower values
+              L <- raschModel_Likelihood(raschObjJason, the) #subset L to take on the Likelihood value
+              pi <- raschModel_Prior(theta) #subset pi to take on Prior value
+              numerator <- function(theta){ #create a function for the numerator of the equation
                 theta*L*pi
               }
-              denominator <- function(theta){
+              denominator <- function(theta){ #create a function for the denominator of the equation
                 (theta-theta) + L*pi
               }
-              num <- integrate(numerator, lower = lower, upper = upper)
-              den <- integrate(denominator, lower = lower, upper = upper)
-              return(num$value/den$value)
+              num <- integrate(numerator, lower = lower, upper = upper) #utilize numerator function to compute integral
+              den <- integrate(denominator, lower = lower, upper = upper) #utilize denominator function to compute integral
+              return(num$value/den$value) #return the division of the two integrals
           }
 )

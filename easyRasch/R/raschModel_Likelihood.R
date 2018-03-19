@@ -27,8 +27,8 @@ setGeneric(name="raschModel_Likelihood",
 #' @export
 setMethod(f="raschModel_Likelihood",
           definition = function(raschObj, theta){
-            PQ <- raschModel_Probability(raschObj, theta)[[2]]
-            L <- prod(PQ)
+            PQ <- raschModel_Probability(raschObj, theta)[[2]] #subset probability function to include only P/Q vector
+            L <- prod(PQ) #product of all values in vector
             return(L)
           }
 )
