@@ -17,12 +17,12 @@
 #' raschModel_Probability(raschObj = raschObj, theta = theta)
 #' 
 #' 
-#' @seealso \code{\link{print}}
-#' @rdname integrateIt
+#' @seealso \code{\link{Rasch}}
+#' @rdname raschModel_Probability
 #' @export
-setGeneric(name="integrateIt",
-           def=function(x, y, from, Rule)
-           {standardGeneric("integrateIt")}
+setGeneric(name="raschModel_Probability",
+           def=function(raschObj, theta)
+           {standardGeneric("raschModel_Probability")}
            )
 
 #' @export
@@ -41,7 +41,4 @@ setMethod(f="raschModel_Probability",
             }
             return(list(PQ[,1], PQ[,3]))
           }
-          
           )
-
-
