@@ -30,12 +30,13 @@ setGeneric(name="raschModel_EAP",
 setMethod(f="raschModel_EAP",
           definition = function(raschObj, theta, upper, lower){ #default upper and lower values
               L <- raschModel_Likelihood(raschObj, theta) #subset L to take on the Likelihood value
-              pi <- raschModel_Prior(theta) #subset pi to take on Prior value
               numerator <- function(theta){ #create a function for the numerator of the equation
+                pi <- raschModel_Prior(theta) #subset pi to take on Prior value
                 theta*L*pi
               }
               denominator <- function(theta){ #create a function for the denominator of the equation
-                (theta-theta) + L*pi
+                pi <- raschModel_Prior(theta) #subset pi to take on Prior value
+                L*pi
               }
               upper = upper
               lower = lower

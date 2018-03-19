@@ -24,7 +24,7 @@ This function prints out the result of of raschModel_EAP and the name of the sub
 raschObj <- new(name = "Jason", a = c(1,3,4,3,2), y = c(3,4,3,5,7))
 theta <- c(5)
 result <- raschModel_EAP(raschObj = raschObj, theta = theta, upper = 6, lower = -6)
-raschObject_Print(result)
+print(result)
 
 
 }
