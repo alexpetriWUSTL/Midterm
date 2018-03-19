@@ -20,9 +20,9 @@ setClass(Class="Rasch",
            y = "numeric"
          ),
          prototype = prototype(
-           x = c(),
-           y = c(),
-           result = c()
+           name = c(),
+           a = c(),
+           y = c()
          )
 )
 
